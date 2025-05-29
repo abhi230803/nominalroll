@@ -149,7 +149,7 @@
 
       <h2>VAYUSETU</h2>
       <div class="portal-name">1DAS NOMINAL ROLL PORTAL</div>
-      <p style="color: black;font-weight: 900;">Nominal Roll for T-Shirt</p>
+      <p style="color: black;font-weight: 900;">Nominal Roll for Mt Everest Expedition Team Felicitation at DG NCC</p>
       <!-- Searchable Regimental No -->
       <input
         list="regimentalNumbers"
@@ -173,23 +173,9 @@
         <option value="3rd Year">3rd Year</option>
       </select>
 
-      <select id="squadron">
-        <option value="">Choose Squadron</option>
-        <option value="Aquino">Aquino</option>
-        <option value="Brar">Brar</option>
-        <option value="Chitnis">Chitnis</option>
-        <option value="Katre">Katre</option>
-      </select>
+      <input  id="phone" type="number" placeholder="Phone Number" required />
 
-      <select id="size">
-        <option value="">Choose Size</option>
-        <option value="XS">XS</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-        <option value="XXL">XXL</option>
-      </select>
+      <input  id="aadhar" type="number" placeholder="Aadhar Number" required />
 
       <button onclick="submitForm()">Submit</button>
       <div id="message" class="message"></div>
@@ -297,13 +283,13 @@
         var rank = document.getElementById("rank").value.trim();
         var name = document.getElementById("name").value.trim();
         var year = document.getElementById("year").value;
-        var squadron = document.getElementById("squadron").value;
-        var size = document.getElementById("size").value;
+        var squadron = document.getElementById("phone").value;
+        var size = document.getElementById("aadhar").value;
         var messageDiv = document.getElementById("message");
 
         messageDiv.innerHTML = ""; // Clear previous messages
 
-        if (!regimentalNo || !rank || !name || !year || !squadron || !size) {
+        if (!regimentalNo || !rank || !name || !year || !phone || !aadhar) {
           messageDiv.innerHTML =
             "<span class='error'>⚠ Please fill all fields!</span>";
           return;
@@ -314,12 +300,12 @@
           "<span class='success'>✔ Data Submitted Successfully!</span>";
 
         fetch(
-          "https://script.google.com/macros/s/AKfycbzix6ySHr8EyM1ElGftbieM9_q4vi9-TvryvcnCfWu5hSpdO89VlLgSrcD671kEH-fM1A/exec",
+          "https://script.google.com/macros/s/AKfycbyctily-oOtFumRaGjHQL9hZ9HidMcqH9vcOZJiVPCLjRKlvU5AWtwKZwLoJPcyoRJIng/exec",
           {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ regimentalNo, rank, name, year, squadron, size }),
+            body: JSON.stringify({ regimentalNo, rank, name, year, phone, aadhar }),
           }
         ).catch(() => {
           messageDiv.innerHTML =
@@ -331,8 +317,8 @@
         document.getElementById("rank").value = "";
         document.getElementById("name").value = "";
         document.getElementById("year").value = "";
-        document.getElementById("squadron").value = "";
-        document.getElementById("size").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("aadhar").value = "";
       }
     </script>
   </body>
