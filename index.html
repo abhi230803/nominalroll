@@ -149,7 +149,7 @@
 
       <h2>VAYUSETU</h2>
       <div class="portal-name">1DAS NOMINAL ROLL PORTAL</div>
-      <p style="color: black;font-weight: 900;">Nominal Roll for Mt Everest Expedition Team Felicitation at DG NCC</p>
+      <p style="color: black;font-weight: 900;">Nominal Roll for T-Shirt</p>
       <!-- Searchable Regimental No -->
       <input
         list="regimentalNumbers"
@@ -173,16 +173,14 @@
         <option value="3rd Year">3rd Year</option>
       </select>
 
-      <input  id="phone" type="number" placeholder="Phone Number" required />
+      <input id="phone" type="number" placeholder="Phone Number" required />
 
-      <input  id="aadhar" type="number" placeholder="Aadhar Number" required />
+      <input id="aadhar" type="number" placeholder="Aadhar Number" required />
 
       <button onclick="submitForm()">Submit</button>
       <div id="message" class="message"></div>
       <div class="footer">&copy; Developed By Cuo Abhinav</div>
     </div>
-
-    
 
     <script>
       // Sample Data for Dropdowns
@@ -300,12 +298,12 @@
           "<span class='success'>✔ Data Submitted Successfully!</span>";
 
         fetch(
-          "https://script.google.com/macros/s/AKfycbyctily-oOtFumRaGjHQL9hZ9HidMcqH9vcOZJiVPCLjRKlvU5AWtwKZwLoJPcyoRJIng/exec",
+          "https://script.google.com/macros/s/AKfycbyi6Nz3gopbxByVEmMF65H2GD3PlTS8ovN8-ZDXQ8t4KqztSMBKdZ1q-DF_jylrppvhwA/exec",
           {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ regimentalNo, rank, name, year, phone, aadhar }),
+            body: JSON.stringify({ regimentalNo, rank, name, year, squadron, size }),
           }
         ).catch(() => {
           messageDiv.innerHTML =
@@ -317,8 +315,8 @@
         document.getElementById("rank").value = "";
         document.getElementById("name").value = "";
         document.getElementById("year").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("aadhar").value = "";
+        document.getElementById("squadron").value = "";
+        document.getElementById("size").value = "";
       }
     </script>
   </body>
